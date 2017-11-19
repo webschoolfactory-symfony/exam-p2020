@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Question «&nbsp;{{ question.title }}&nbsp;»</h2>
+
+    <p>
+        {{ question.text }}
+    </p>
+
+    <a href="{{ path('questions_list') }}">Liste des questions</a>
+    <a href="{{ path('questions_new') }}">Nouvelle question</a>
+{% endblock %}

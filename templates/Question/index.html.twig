@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Questions</h2>
+
+    <a href="{{ path('questions_new') }}">Nouvelle question</a>
+
+    <ul>
+        {% for question in questions %}
+            <li>
+                <a href="{{ path('questions_show', {id: question.id}) }}">
+                    {{ question.title }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

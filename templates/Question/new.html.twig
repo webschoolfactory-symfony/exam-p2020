@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h2>Nouvelle question</h2>
+
+    <a href="{{ path('questions_list') }}">Liste des questions</a>
+
+    <form action="{{ path('questions_create') }}" method="POST">
+        {{ form_rest(form) }}
+    </form>
+{% endblock %}
