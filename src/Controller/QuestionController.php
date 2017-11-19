@@ -12,18 +12,17 @@ class QuestionController extends Controller
 {
     /**
      * @Route(path="/", methods={"GET"}, name="questions_list")
-     *
-     * @return \Symfony\Component\HttpFoundation\Response
      */
     public function indexAction()
     {
+        $questions = $this->getDoctrine()->getRepository(Question::class)->findAll();
+
         return $this->render(
             'Question/index.html.twig',
-            [
-                'questions' => $this->getDoctrine()->getRepository(Question::class)->findAll(),
-            ]
+            [ 'questions' => $questions ]
         );
     }
+
     /**
      * @Route(path="/questions/{id}", methods={"GET"}, name="questions_show", requirements={"id": "\d+"})
      *
